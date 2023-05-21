@@ -15,6 +15,7 @@ export default function Card({ cardData, successfulMove, badMove }) {
   return (
     <button type="button" className="card" onClick={handleClick}>
       <h3>{cardData.name}</h3>
+      <img src={cardData.img_url} alt={cardData.name} />
     </button>
   );
 }
