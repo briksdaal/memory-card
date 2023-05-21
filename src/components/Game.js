@@ -4,6 +4,7 @@ import Scoreboard from './Scoreboard';
 import CardsContainer from './CardsContainer';
 import { shuffle, giveKeys } from '../jsAssets/helpers';
 import getLevelData from '../jsAssets/levelsGenerator';
+import '../styles/Game.css';
 
 export default function Game() {
   const [currentLevel, setCurrentLevel] = useState(1);

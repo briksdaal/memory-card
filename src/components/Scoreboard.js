@@ -1,3 +1,5 @@
+import '../styles/Scoreboard.css';
+
 export default function Scoreboard({
   currentScore, currentLevel, highScore, highLevel,
 }) {
