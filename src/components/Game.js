@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
-import uniqid from 'uniqid';
 import Scoreboard from './Scoreboard';
 import CardsContainer from './CardsContainer';
-import { shuffle, giveKeys } from '../jsAssets/helpers';
+import { shuffle } from '../jsAssets/helpers';
 import getLevelData from '../jsAssets/levelsGenerator';
 import '../styles/Game.css';
 
 export default function Game() {
   const [currentLevel, setCurrentLevel] = useState(1);
-  const [cardsArray, setCardsArray] = useState(giveKeys(getLevelData(1), uniqid));
+  const [cardsArray, setCardsArray] = useState(getLevelData(1));
   const [currentLevelScore, setCurrentLevelScore] = useState(0);
   const [currentTotalScore, setCurrentTotalScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
@@ -26,12 +25,12 @@ export default function Game() {
   function nextLevel() {
     setCurrentLevel((level) => level + 1);
     setCurrentLevelScore(0);
-    setCardsArray(giveKeys(getLevelData(currentLevel + 1), uniqid));
+    setCardsArray(getLevelData(currentLevel + 1));
   }
 
   function resetScoresAndLevels() {
     setCurrentLevel(1);
-    setCardsArray(giveKeys(getLevelData(1), uniqid));
+    setCardsArray(getLevelData(1));
     setCurrentLevelScore(0);
     setCurrentTotalScore(0);
   }
@@ -64,9 +63,12 @@ export default function Game() {
 
   return (
     <div className="memory-game">
+      <div className="game-overlay" />
       <div className="top-row">
-        <h1>Dragonball Z Memory Game</h1>
-        <h2>Don&apos;t click on the same card twice!</h2>
+        <div className="headings">
+          <h1>Dragonball Z Memory Game</h1>
+          <h2>Don&apos;t click on the same card twice!</h2>
+        </div>
         <Scoreboard
           currentScore={currentTotalScore}
           currentLevel={currentLevel}
