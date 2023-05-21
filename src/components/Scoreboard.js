@@ -1,16 +1,28 @@
-export default function Scoreboard({ currentScore, highScore }) {
+export default function Scoreboard({
+  currentScore, currentLevel, highScore, highLevel,
+}) {
   return (
     <div className="scoreboard">
-      <h2>
-        Current score:
+      <h3>
+        Current Score:
         {' '}
         {currentScore}
-      </h2>
-      <h2>
+      </h3>
+      <h3>
+        Current Level:
+        {' '}
+        {currentLevel}
+      </h3>
+      <h3>
         High Score:
         {' '}
         {highScore}
-      </h2>
+      </h3>
+      <h3>
+        High Level:
+        {' '}
+        {highLevel}
+      </h3>
     </div>
   );
 }

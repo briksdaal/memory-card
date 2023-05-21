@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-export default function Card({ cardData, successfulMove, gameOver }) {
+export default function Card({ cardData, successfulMove, badMove }) {
   const [clicked, setClicked] = useState(false);
 
   function handleClick() {
     if (clicked) {
-      gameOver();
+      badMove();
     } else {
       setClicked(true);
       successfulMove();
