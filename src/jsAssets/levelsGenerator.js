@@ -7,7 +7,7 @@ export default function getLevelData(level) {
   if (noOfCards > cardsData.length) {
     noOfCards = cardsData.length;
 
-    if (cardsData % 2 === 1) {
+    if (noOfCards % 2 === 1) {
       noOfCards -= 1;
     }
   }
