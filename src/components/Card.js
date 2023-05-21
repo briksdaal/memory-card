@@ -15,8 +15,9 @@ export default function Card({ cardData, successfulMove, badMove }) {
 
   return (
     <button type="button" className="card" onClick={handleClick}>
+      <div className="card-overlay" />
+      <img src={cardData.img_url} alt={cardData.name.toLowerCase()} />
       <h3>{cardData.name}</h3>
-      <img src={cardData.img_url} alt={cardData.name} />
     </button>
   );
 }
