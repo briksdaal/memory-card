@@ -1,36 +1,50 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import uniqid from 'uniqid';
 import Scoreboard from './Scoreboard';
 import CardsContainer from './CardsContainer';
-import shuffle from '../assets/helpers';
+import { shuffle, giveKeys } from '../assets/helpers';
 import cardsData from '../assets/cardsData';
 
 export default function Game() {
-  const [cardsArray, setCardsArray] = useState(cardsData);
+  const [cardsArray, setCardsArray] = useState(giveKeys(cardsData, uniqid));
+  const [currentScore, setCurrentScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
 
   function shuffleCards() {
-    setCardsArray(shuffle(cardsArray));
+    setCardsArray((cards) => shuffle(cards));
   }
 
-  function unmount() {
-    setCardsArray([]);
+  function raiseCurrentScore() {
+    setCurrentScore((score) => score + 1);
   }
 
-  function remount() {
-    setCardsArray(shuffle(cardsData));
+  function successfulMove() {
+    raiseCurrentScore();
+    shuffleCards();
   }
+
+  function gameOver() {
+    if (currentScore > highScore) {
+      setHighScore(currentScore);
+    }
+
+    setCurrentScore(0);
+
+    setCardsArray((cards) => shuffle(giveKeys(cards, uniqid)));
+  }
+
+  useEffect(() => {
+    shuffleCards();
+  }, []);
 
   return (
     <div className="memory-game">
       <div className="top-row">
         <h1>Dragonball Z Memory Game</h1>
         <h2>Don&apos;t click on the same card twice!</h2>
-        <Scoreboard />
+        <Scoreboard currentScore={currentScore} highScore={highScore} />
       </div>
-      <CardsContainer cardsArray={cardsArray} shuffleCards={shuffleCards} />
-      <div>
-        <button type="submit" onClick={unmount}>Unmount</button>
-        <button type="submit" onClick={remount}>Remount</button>
-      </div>
+      <CardsContainer cardsArray={cardsArray} successfulMove={successfulMove} gameOver={gameOver} />
     </div>
   );
 }

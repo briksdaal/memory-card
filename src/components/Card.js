@@ -1,21 +1,20 @@
 import { useState } from 'react';
 
-export default function Card({ cardData, shuffleCards }) {
-  const [ctr, setCtr] = useState(0);
+export default function Card({ cardData, successfulMove, gameOver }) {
+  const [clicked, setClicked] = useState(false);
 
   function handleClick() {
-    setCtr((c) => c + 1);
-    shuffleCards();
+    if (clicked) {
+      gameOver();
+    } else {
+      setClicked(true);
+      successfulMove();
+    }
   }
 
   return (
     <button type="button" className="card" onClick={handleClick}>
       <h3>{cardData.name}</h3>
-      <h2>
-        Ctr:
-        {' '}
-        {ctr}
-      </h2>
     </button>
   );
 }
