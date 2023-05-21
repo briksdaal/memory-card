@@ -1,4 +1,4 @@
-import { shuffle } from './helpers';
+import { shuffle, giveKeys } from './helpers';
 import cardsData from './cardsData';
 
 export default function getLevelData(level) {
@@ -6,5 +6,5 @@ export default function getLevelData(level) {
     ? 16
     : level * 2;
 
-  return shuffle(cardsData).slice(0, noOfCards);
+  return giveKeys(shuffle(cardsData).slice(0, noOfCards));
 }
