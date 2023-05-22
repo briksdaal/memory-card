@@ -12,6 +12,7 @@ export default function Game() {
   const [currentTotalScore, setCurrentTotalScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
   const [highLevel, setHighLevel] = useState(1);
+  const [iteration, setIteration] = useState(1);
 
   function shuffleCards() {
     setCardsArray((cards) => shuffle(cards));
@@ -20,6 +21,10 @@ export default function Game() {
   function raiseScore() {
     setCurrentLevelScore((score) => score + 1);
     setCurrentTotalScore((score) => score + 1);
+  }
+
+  function raiseIteration() {
+    setIteration((i) => i + 1);
   }
 
   function nextLevel() {
@@ -33,6 +38,7 @@ export default function Game() {
     setCardsArray(getLevelData(1));
     setCurrentLevelScore(0);
     setCurrentTotalScore(0);
+    raiseIteration((i) => i + 1);
   }
 
   function successfulMove() {
@@ -67,7 +73,7 @@ export default function Game() {
       <div className="top-row">
         <div className="headings">
           <h1>Dragonball Z Memory Game</h1>
-          <h2>Don&apos;t click on the same card twice!</h2>
+          <h2>Click a card, but don&apos;t click on the same card twice!</h2>
         </div>
         <Scoreboard
           currentScore={currentTotalScore}
@@ -80,6 +86,8 @@ export default function Game() {
         cardsArray={cardsArray}
         successfulMove={successfulMove}
         badMove={badMove}
+        currentLevel={currentLevel}
+        iteration={iteration}
       />
 
     </div>
