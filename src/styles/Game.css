@@ -1,4 +1,6 @@
 .memory-game {
+    display: flex;
+    flex-direction: column;
     position: relative;
     padding: 40px;
     background: url('../assets/game_bg.jpg');

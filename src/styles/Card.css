@@ -1,39 +1,55 @@
 .card {
-    position: relative;
-    padding: 10px;
-    background: url('../assets/card_bg.jpg');
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
+  position: relative;
+  height: 300px;
+  padding: 10px;
+  background: url("../assets/card_bg.jpg");
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.cards-container.loading .card {
+  visibility: hidden;
+  position: absolute;
 }
 
 .card:hover {
-    box-shadow: #fff 1px 1px 7px 2px;
+  box-shadow: #fff 1px 1px 7px 2px;
 }
 
 .card .card-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    z-index: 0;
-    /* background: #a6a6a655; */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  /* background: #a6a6a655; */
+}
+
+.card-content {
+  transition: all 100ms ease-in-out;
+}
+
+.cards-container.loading .card-content,
+.cards-container.shuffled .card-content {
+  transition: none;
+  transform: scale(0);
 }
 
 .card h3 {
-    position: inherit;
-    font-size: 1rem;
-    z-index: 10;
+  position: inherit;
+  font-size: 1rem;
+  z-index: 10;
 }
 
 .card img {
-    position: inherit;
-    height: 250px;
-    width: 100%;
-    object-fit: cover;
-    object-position: top;
-    border-radius: 5px;
-    border: 2px solid #eaa78d29;
-    z-index: 10;
+  position: inherit;
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 5px;
+  border: 2px solid #eaa78d29;
+  z-index: 10;
 }
