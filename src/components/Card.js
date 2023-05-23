@@ -25,7 +25,6 @@ export default function Card({
       className="card"
       onClick={handleClick}
     >
-      <div className="card-overlay" />
       <div className="card-content">
         <img
           src={cardData.img_url}
