@@ -1,9 +1,11 @@
 .cards-container {
+  padding: 0 40px;
   position: relative;
   display: grid;
   flex: 1;
   grid-template-columns: repeat(8, 1fr);
   gap: 20px;
+  z-index: 10;
 }
 
 .cards-container.loading {
@@ -14,11 +16,6 @@
   padding-top: 80px;
   display: flex;
   justify-content: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
 }
 
 .loading-container h3 {

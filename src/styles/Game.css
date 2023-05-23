@@ -1,38 +1,34 @@
 .memory-game {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    padding: 40px;
-    background: url('../assets/game_bg.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: url("../assets/game_bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
 }
 
 h1 {
-    font-size: 4rem;
+  font-family: "Saiyan-Sans", "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 4rem;
 }
 
 .game-overlay {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: #a6a6a655;
-    z-index: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #a6a6a655;
+  z-index: 0;
 }
 
 .top-row {
-    position: inherit;
-    margin-bottom: 40px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    z-index: 10;
-}
-
-.cards-container {
-    position: inherit;
-    z-index: 10;
+  position: inherit;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  z-index: 10;
 }
