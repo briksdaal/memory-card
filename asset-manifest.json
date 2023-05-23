@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/memory-card/static/css/main.89c4a1d5.css",
-    "main.js": "/memory-card/static/js/main.d0f62c38.js",
+    "main.css": "/memory-card/static/css/main.acd9e0c7.css",
+    "main.js": "/memory-card/static/js/main.d4d5f6db.js",
     "static/media/roshi.jpg": "/memory-card/static/media/roshi.0cd9b3bf4631e488b98b.jpg",
     "static/media/cell.jpg": "/memory-card/static/media/cell.4a9b7d430b9c549fd7d6.jpg",
     "static/media/game_bg.jpg": "/memory-card/static/media/game_bg.804e7d143e80dc511709.jpg",
@@ -39,11 +39,11 @@
     "static/media/Saiyan-Sans.woff": "/memory-card/static/media/Saiyan-Sans.f9276db95d78011ed026.woff",
     "static/media/Saiyan-Sans.woff2": "/memory-card/static/media/Saiyan-Sans.2be79c361935481f7bcf.woff2",
     "index.html": "/memory-card/index.html",
-    "main.89c4a1d5.css.map": "/memory-card/static/css/main.89c4a1d5.css.map",
-    "main.d0f62c38.js.map": "/memory-card/static/js/main.d0f62c38.js.map"
+    "main.acd9e0c7.css.map": "/memory-card/static/css/main.acd9e0c7.css.map",
+    "main.d4d5f6db.js.map": "/memory-card/static/js/main.d4d5f6db.js.map"
   },
   "entrypoints": [
-    "static/css/main.89c4a1d5.css",
-    "static/js/main.d0f62c38.js"
+    "static/css/main.acd9e0c7.css",
+    "static/js/main.d4d5f6db.js"
   ]
 }
