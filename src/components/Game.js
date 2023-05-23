@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Scoreboard from './Scoreboard';
 import CardsContainer from './CardsContainer';
+import Footer from './Footer';
 import { shuffle } from '../jsAssets/helpers';
 import getLevelData from '../jsAssets/levelsGenerator';
 import '../styles/Game.css';
@@ -89,7 +90,7 @@ export default function Game() {
         currentLevel={currentLevel}
         iteration={iteration}
       />
-
+      <Footer />
     </div>
   );
 }
