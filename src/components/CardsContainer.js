@@ -7,6 +7,7 @@ export default function CardsContainer({
 }) {
   const [loading, setLoading] = useState(true);
   const [shuffled, setShuffled] = useState(false);
+
   let classlist = 'cards-container';
 
   if (loading) {

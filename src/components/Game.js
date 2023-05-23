@@ -7,8 +7,8 @@ import getLevelData from '../jsAssets/levelsGenerator';
 import '../styles/Game.css';
 
 export default function Game() {
-  const [currentLevel, setCurrentLevel] = useState(1);
   const [cardsArray, setCardsArray] = useState(getLevelData(1));
+  const [currentLevel, setCurrentLevel] = useState(1);
   const [currentLevelScore, setCurrentLevelScore] = useState(0);
   const [currentTotalScore, setCurrentTotalScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
