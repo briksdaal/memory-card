@@ -27,7 +27,7 @@ export default function CardsContainer({
       setLoading(true);
       setShuffled(false);
     };
-  }, [iteration, cardsArray.length]);
+  }, [iteration, currentLevel]);
 
   return (
     <div className={classlist}>
