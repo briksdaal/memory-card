@@ -2,9 +2,6 @@
 
 A memory card game built with React
 
-Available to play at:
-https://briksdaal.github.io/memory-card/
-
 ## Game Description
 - Game consists of cards showing on the screen, each with a different character
 - Objective is to not click on the same card twice
